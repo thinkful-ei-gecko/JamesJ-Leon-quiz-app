@@ -100,7 +100,7 @@ function displayScore() {
   $('main').empty();
   $('main').append(`
     <h1>Game of Thrones Quiz</h1>
-    <h2>Your Score: ${database.score}</h2>
+    <h2>Your Score: ${database.score} out of ${database.store.length}</h2>
 
     <form id="startQuiz">
       <button type="submit">Play Again?</button>
