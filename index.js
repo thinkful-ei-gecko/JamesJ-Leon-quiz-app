@@ -15,8 +15,34 @@ function loadApp() {
   `);
 }
 
+function startQuiz() {
+  console.log('start quiz begin');
+  $('#startQuiz').submit( e => {
+    e.preventDefault();
+    console.log('function catch');
+    let score;
+    let currentQuestionNumber;
+
+    $('main').empty();
+    $('main').append(`
+    <h1>Game of Thrones Quiz</h1>
+    <ul>
+      <li>Score: ${score}</li>
+      <li>Question: ${currentQuestionNumber} out of ${database.length}{</li>
+    </ul>
+    `);
+  });
+}
+
 function listener() {
   loadApp();
+  startQuiz();
+  // $('#startQuiz').on('submit', 'button', e => 
+  // {
+  //   e.preventDefault();
+  //   console.log('submit success');
+  // }
+  // );
 }
 
 $(listener);
