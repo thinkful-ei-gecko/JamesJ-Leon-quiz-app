@@ -16,26 +16,25 @@ function loadApp() {
 
 function startQuiz() {
   $('#startQuiz').submit( e => {
-    let score =0;
-    let currentQuestionNumber = 1;
     e.preventDefault();
+    let questionIndex = database.store[database.currentQuestionNumber] - 1;
     $('main').empty();
     $('main').append(`
     <h1>Game of Thrones Quiz</h1>
     <ul>
-      <li>Score: ${score}</li>
-      <li>Question: ${currentQuestionNumber} out of ${database.length} </li>
+      <li>Score: ${database.score}</li>
+      <li>Question: ${database.currentQuestionNumber} out of ${database.store.length} </li>
     </ul>
     <form id="quizQuestions">
-      <h2>${database[currentQuestionNumber]['question']}</h2>
-      <label for="key1">${database[currentQuestionNumber]['answer'][0]}</label>
-      <input type="radio" name="key" id="key1" required="required" />
-      <label for="key2">${database[currentQuestionNumber]['answer'][1]}</label>
-      <input type="radio" name="key" id="key2" required="required" />
-      <label for="key3">${database[currentQuestionNumber]['answer'][2]}</label>
-      <input type="radio" name="key" id ="key3" required="required" />
-      <label for="key4">${database[currentQuestionNumber]['answer'][3]}</label>
-      <input type="radio" name="key" id ="key4" required="required" />
+      <h2>${questionIndex['question']}</h2>
+      <label for="key1">${database.store[database.currentQuestionNumber]}</label>
+      <input type="radio" name="key" id="key1" required="required" value="${database.store[database.currentQuestionNumber]['answer'][0]}" />
+      <label for="key2">${database.store[database.currentQuestionNumber]['answer'][1]}</label>
+      <input type="radio" name="key" id="key2" required="required" value="${database.store[database.currentQuestionNumber]['answer'][1]}" />
+      <label for="key3">${database.store[database.currentQuestionNumber]['answer'][2]}</label>
+      <input type="radio" name="key" id ="key3" required="required" value="${database.store[database.currentQuestionNumber]['answer'][2]}" />
+      <label for="key4">${database.store[database.currentQuestionNumber]['answer'][3]} </label>
+      <input type="radio" name="key" id ="key4" required="required" value="${database.store[database.currentQuestionNumber]['answer'][3]}" />
       <button type="submit">Submit Answer</button>
     </form>
     `);
@@ -46,10 +45,21 @@ function startQuiz() {
 
 function submitAnswer() {
   $('main').on('submit','#quizQuestions', e => {
-    let choice = $('#quizQuestions.input:checked').val();
+    let choice = $( 'input:checked' ).val();
+    let correct = '';
+    let message = '';
     console.log(choice);
     e.preventDefault();
     $('#quizQuestions').remove();
+    if (choice === database.store[database.currentQuestionNumber]['correctAnswer']) {
+      correct = 'You are correct!';
+      message = 'Good work! Move on to the next question.';
+    } else {
+      correct = 'You are incorrect...';
+      message = `Correct answer was: ${database.store[database.currentQuestionNumber]['correctAnswer']}`;
+    }
+    
+    
   });
 }
 
