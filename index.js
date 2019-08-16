@@ -50,7 +50,7 @@ function submitAnswer() {
     let questionIndex = database.store[database.currentQuestionNumber - 1];
     let correct = '';
     let message = '';
-    let buttonTitle = 'Next Question'
+    let buttonTitle = 'Next Question';
     e.preventDefault();
     $('#quizQuestions').remove();
     if (choice === questionIndex['correctAnswer']) {
