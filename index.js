@@ -1,25 +1,9 @@
 'use strict';
 
-/**
- * Function loads the quiz page
- */
-function loadApp() {
+function makeGuess() {
+  let questionIndex = database.store[database.currentQuestionNumber - 1];
   $('main').empty();
   $('main').append(`
-    <h1>Game of Thrones Quiz</h1>
-    <p>Behold - this is the toughest quiz about Games of Thrones ever devised. Enjoy!</p>
-    <form id="startQuiz">
-      <button type="submit">Start Quiz</button>
-    </form>
-  `);
-}
-
-function playQuiz() {
-  $('#startQuiz').submit( e => {
-    e.preventDefault();
-    let questionIndex = database.store[database.currentQuestionNumber - 1];
-    $('main').empty();
-    $('main').append(`
     <h1>Game of Thrones Quiz</h1>
     <ul>
       <li id="scoreCount">Score: ${database.score}</li>
@@ -38,6 +22,25 @@ function playQuiz() {
       <button type="submit">Submit Answer</button>
     </form>
     `);
+}
+/**
+ * Function loads the quiz page
+ */
+function loadApp() {
+  $('main').empty();
+  $('main').append(`
+    <h1>Game of Thrones Quiz</h1>
+    <p>Behold - this is the toughest quiz about Games of Thrones ever devised. Enjoy!</p>
+    <form id="startQuiz">
+      <button type="submit">Start Quiz</button>
+    </form>
+  `);
+}
+
+function playQuiz() {
+  $('#startQuiz').submit(e => {
+    e.preventDefault();
+    makeGuess();
   });
 }
 
@@ -78,12 +81,16 @@ function submitAnswer() {
  * Else, displayScore();
  */
 function progressQuiz() { 
-  if (database.currentQuestionNumber === database.store.length) {
-    displayScore();
-  }
-  else {
-    playQuiz();
-  }
+  $('main').on('submit','#nextQuestion', e => {
+    e.preventDefault();
+    if (database.currentQuestionNumber === database.store.length) {
+      displayScore();
+    }
+    else {
+      database.currentQuestionNumber++;
+      makeGuess();
+    }
+  });
 }
 
 /**
