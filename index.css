@@ -1,5 +1,5 @@
 html {
-  background: url(westoros.jpg) center center fixed;
+  background: url(westoros.jpg) top right fixed;
   background-size: cover;
   color: white;
   width: 100%;
@@ -7,7 +7,9 @@ html {
 }
 
 body {
-  background-image: radial-gradient(circle at center, rgba(0,0,0,.9), transparent);
+  background-image: linear-gradient(rgba(0,0,0,.6), transparent);
+  background-size: 100%;
+  min-height: 100%;
 }
 
 body {
