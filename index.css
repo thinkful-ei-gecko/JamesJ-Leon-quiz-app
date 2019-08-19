@@ -1,0 +1,28 @@
+.background {
+  background: url(westoros.jpg) center center fixed;
+  background-size: cover;
+  display: flex;
+  color: white;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  font-family: 'Raleway';
+}
+
+h1 {
+  font-family: 'Cinzel Decorative', cursive;
+  text-align: center;
+}
+
+body {
+  font-family: 'Raleway';
+}
+
+@media only screen and (min-device-width: 481px) {
+  body {
+    
+  }
+}
