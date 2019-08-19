@@ -114,18 +114,6 @@ input:checked + label {
   color: black;
 }
 
-.cropImage {
-  height: 200px;
-  width: 100%;
-  vertical-align: center;
-  overflow: hidden;
-}
-
-.cropImage img {
-  position: relative;
-  top: -25%;
-}
-
 .resultsPicShow {
   width: 100%;
   text-align: center;
@@ -142,8 +130,69 @@ input:checked + label {
   height: 90%;
 }
 
-@media only screen and (min-device-width: 481px) {
-  body {
-    
+@media only screen and (max-device-width: 480px) {
+  .cropImage {
+    height: 200px;
+    width: 100%;
+    vertical-align: center;
+    overflow: hidden;
   }
+
+  .cropImage img {
+    position: relative;
+    top: -25%;
+  }
+}
+@media only screen and (min-device-width: 481px) {
+
+  h1 {
+    font-size: 64px;
+  }
+
+  h2 {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 25px auto;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  li {
+    display: inline;
+    text-align: center;
+    font-size: 24px;
+    margin: 10px 0px;
+    padding: 5px 0px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  label {
+    width: 45%;
+    margin: 10px;
+    padding: 20px 0px;
+  }
+
+  button {
+    width: 100%;
+    margin: 10px;
+  }
+
+  .resultsPicShow {
+    max-width: 500px;
+    text-align: center;
+    vertical-align: center;
+    margin: 0px auto;
+  }
+
 }
