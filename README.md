@@ -20,11 +20,11 @@ Technical requirements
 Your quiz app must:
 
 - [x] Render answer choices in a <form>.
-- [ ] Use semantic HTML, along with CSS and jQuery.
-- [ ] Follow a11y best practices.
-- [ ] Refer back to the checkpoints on accessibility and forms for help.
-- [ ] Use responsive design.
-- [ ] Be fully usable by keyboard (which will be easy enough if you start with a form).
+- [x] Use semantic HTML, along with CSS and jQuery.
+- [x] Follow a11y best practices.
+- [x] Refer back to the checkpoints on accessibility and forms for help.
+- [x] Use responsive design.
+- [x] Be fully usable by keyboard (which will be easy enough if you start with a form).
 - [x] Start page has to be dynamically-rendered
 
 # To Do
