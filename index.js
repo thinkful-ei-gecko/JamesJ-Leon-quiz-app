@@ -54,19 +54,21 @@ function submitAnswer() {
     e.preventDefault();
     $('#quizQuestions').remove();
     if (choice === questionIndex['correctAnswer']) {
-      correct = 'You are correct!';
+      correct = `<div class="cropImage"><img src="https://m0.joe.co.uk/wp-content/uploads/2017/08/28202547/DanyThumbs.gif" alt="correct answer" /></div>`;
       message = 'Good work! Move on to the next question.';
       database.score++;
     } else {
-      correct = 'You are incorrect...';
-      message = `Correct answer was: ${questionIndex['correctAnswer']}`;
+      correct = `<img src='http://giphygifs.s3.amazonaws.com/media/nOqqmqx3Gwucw/giphy.gif' alt='incorrect answer' class="incorrectPic" />`;
+      message = `NO! Correct answer was: ${questionIndex['correctAnswer']}`;
     }
     if (database.currentQuestionNumber === database.store.length) {
       buttonTitle = 'See Results';
     }
     $('main').append(`
-      <h2>${correct}</h2>
-      <p>${message}</p>
+      <div class="reveal">
+        <h2>${correct}</h2>
+        <p>${message}</p>
+      </div>
       <form id="nextQuestion">
       <button type="submit">${buttonTitle}</button>
       </form>
@@ -98,10 +100,24 @@ function progressQuiz() {
  */
 function displayScore() {
   $('main').empty();
+  let resultsPic = '';
+   let resultsAlt = '';
+  if (database.score === 0 || database.score === 1) {
+    resultsPic = database.resultGif[0][0];
+    resultsAlt = database.resultGif[0][1];
+  }
+  else if (database.score === 2 || database.score === 3 || database.score === 4) {
+    resultsPic = database.resultGif[1][0];
+    resultsAlt = database.resultGif[1][1];
+  }
+  else {
+    resultsPic = database.resultGif[2][0];
+    resultsAlt = database.resultGif[2][1];
+  }
   $('main').append(`
     <h1>Game of Thrones Quiz</h1>
     <h2>Your Score: ${database.score} out of ${database.store.length}</h2>
-
+    <div class="resultsPicShow"><img src="${resultsPic}" alt="${resultsAlt}" /></div>
     <form id="startQuiz">
       <button type="submit">Play Again?</button>
     </form>
