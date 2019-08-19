@@ -11,14 +11,14 @@ function makeGuess() {
     </ul>
     <form id="quizQuestions">
       <h2>${questionIndex['question']}</h2>  
-      <label for="key1">${questionIndex['answer'][0]}</label>
       <input type="radio" name="key" id="key1" required="required" value="${questionIndex['answer'][0]}" />
-      <label for="key2">${questionIndex['answer'][1]}</label>
+      <label for="key1">${questionIndex['answer'][0]}</label>
       <input type="radio" name="key" id="key2" required="required" value="${questionIndex['answer'][1]}" />
+      <label for="key2">${questionIndex['answer'][1]}</label>
+      <input type="radio" name="key" id="key3" required="required" value="${questionIndex['answer'][2]}" />
       <label for="key3">${questionIndex['answer'][2]}</label>
-      <input type="radio" name="key" id ="key3" required="required" value="${questionIndex['answer'][2]}" />
-      <label for="key4">${questionIndex['answer'][3]} </label>
       <input type="radio" name="key" id ="key4" required="required" value="${questionIndex['answer'][3]}" />
+      <label for="key4">${questionIndex['answer'][3]} </label>
       <button type="submit">Submit Answer</button>
     </form>
     `);

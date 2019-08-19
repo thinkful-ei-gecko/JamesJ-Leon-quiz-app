@@ -5,6 +5,20 @@
   color: white;
 }
 
+.gradient {
+  background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
+  width: 100%;
+}
+
+body {
+  font-family: 'Raleway';
+}
+
+main {
+  width: 90%;
+  padding: 10px;
+  margin: 0 auto;
+}
 button {
   background-color: black;
   color: white;
@@ -16,11 +30,66 @@ button {
 
 h1 {
   font-family: 'Cinzel Decorative', cursive;
+  color: white;
   text-align: center;
+  font-size: 30px; 
+  font-weight: bold;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
-body {
-  font-family: 'Raleway';
+p {
+  text-align: center;
+  margin: 10px auto;
+  max-width: 90%;
+}
+
+}
+
+ul {
+  list-style: none;
+  margin: 0px auto;
+  width: 90%;
+
+}
+
+li {
+  display: block;
+  text-align: center;
+  margin: 10px 0px;
+  padding: 5px 0px;
+}
+
+form {
+  text-align: center;
+  display: flex;
+  flex-direction: column; 
+}
+
+input[name="key"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+label {
+  font-size: 20px;
+  background-color: black;
+  border: 1px solid white;
+  padding: 10px 0px;
+  margin: 5px 0px;
+}
+
+label:active, label:hover, button:active, button:hover {
+  background-color: white;
+  color: black;
+}
+
+input:checked + label {
+  background-color: white;
+  color: black;
 }
 
 @media only screen and (min-device-width: 481px) {
