@@ -6,12 +6,14 @@
 }
 
 .gradient {
-  background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
+  background-image: radial-gradient(circle at center, rgba(0,0,0,.9), transparent);
   width: 100%;
+  height: 100%;
 }
 
 body {
-  font-family: 'Raleway';
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
 }
 
 main {
@@ -20,42 +22,57 @@ main {
   margin: 0 auto;
 }
 button {
-  background-color: black;
+  background-color: rgba(173, 140, 91, 0.9);
   color: white;
-  border: 1px solid white;
-  font-family: 'Raleway';
-  padding: 24px 48px;
-  font-size: 22px;
+  border: 1px solid black;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  padding: 18px 0px;
+  font-size: 26px;
+  margin-top: 3px;
 }
 
 h1 {
   font-family: 'Cinzel Decorative', cursive;
   color: white;
   text-align: center;
-  font-size: 30px; 
-  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(173, 140, 91, 0.9);
+  font-size: 42px; 
+  font-weight: 100;
   max-width: 90%;
-  margin: 0 auto;
+  margin: 30px auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+  margin: 10px auto;
+  max-width: 90%;
+  line-height: 24px;
 }
 
 p {
   text-align: center;
+  font-size: 24px;
   margin: 10px auto;
   max-width: 90%;
+  line-height: 24px;
 }
 
+.intro {
+  margin-bottom: 40px;
 }
 
 ul {
   list-style: none;
   margin: 0px auto;
   width: 90%;
-
 }
 
 li {
   display: block;
   text-align: center;
+  font-size: 24px;
   margin: 10px 0px;
   padding: 5px 0px;
 }
@@ -75,11 +92,11 @@ input[name="key"] {
 }
 
 label {
-  font-size: 20px;
+  font-size: 18px;
   background-color: black;
   border: 1px solid white;
   padding: 10px 0px;
-  margin: 5px 0px;
+  margin: 3px 0px;
 }
 
 label:active, label:hover, button:active, button:hover {

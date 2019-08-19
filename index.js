@@ -30,7 +30,7 @@ function loadApp() {
   $('main').empty();
   $('main').append(`
     <h1>Game of Thrones Quiz</h1>
-    <p>Behold - this is the toughest quiz about Games of Thrones ever devised. Enjoy!</p>
+    <p class="intro">Behold - this is the toughest quiz about Games of Thrones ever devised. Enjoy!</p>
     <form id="startQuiz">
       <button type="submit">Start Quiz</button>
     </form>
