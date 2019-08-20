@@ -1,3 +1,5 @@
+This app is a pair project completed by James Jenkins and Leon Dail
+
 # JamesJ-Leon-quiz-app
 Behold - this is the toughest quiz about Games of Thrones ever devised. Enjoy!
 
